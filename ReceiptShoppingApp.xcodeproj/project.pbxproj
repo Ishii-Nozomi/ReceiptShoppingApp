@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		C8691C112AD3FFB100769DBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8691C102AD3FFB100769DBF /* AppDelegate.swift */; };
 		C8691C132AD3FFB100769DBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8691C122AD3FFB100769DBF /* SceneDelegate.swift */; };
-		C8691C152AD3FFB100769DBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8691C142AD3FFB100769DBF /* ViewController.swift */; };
-		C8691C182AD3FFB100769DBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8691C162AD3FFB100769DBF /* Main.storyboard */; };
 		C8691C1A2AD3FFB500769DBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8691C192AD3FFB500769DBF /* Assets.xcassets */; };
 		C8691C1D2AD3FFB500769DBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8691C1B2AD3FFB500769DBF /* LaunchScreen.storyboard */; };
 		C8691C282AD3FFB600769DBF /* ReceiptShoppingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8691C272AD3FFB600769DBF /* ReceiptShoppingAppTests.swift */; };
@@ -39,8 +37,6 @@
 		C8691C0D2AD3FFB100769DBF /* ReceiptShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReceiptShoppingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8691C102AD3FFB100769DBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8691C122AD3FFB100769DBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C8691C142AD3FFB100769DBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C8691C172AD3FFB100769DBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8691C192AD3FFB500769DBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8691C1C2AD3FFB500769DBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8691C1E2AD3FFB500769DBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,8 +97,6 @@
 			children = (
 				C8691C102AD3FFB100769DBF /* AppDelegate.swift */,
 				C8691C122AD3FFB100769DBF /* SceneDelegate.swift */,
-				C8691C142AD3FFB100769DBF /* ViewController.swift */,
-				C8691C162AD3FFB100769DBF /* Main.storyboard */,
 				C8691C192AD3FFB500769DBF /* Assets.xcassets */,
 				C8691C1B2AD3FFB500769DBF /* LaunchScreen.storyboard */,
 				C8691C1E2AD3FFB500769DBF /* Info.plist */,
@@ -233,7 +227,6 @@
 			files = (
 				C8691C1D2AD3FFB500769DBF /* LaunchScreen.storyboard in Resources */,
 				C8691C1A2AD3FFB500769DBF /* Assets.xcassets in Resources */,
-				C8691C182AD3FFB100769DBF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +251,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8691C152AD3FFB100769DBF /* ViewController.swift in Sources */,
 				C8691C112AD3FFB100769DBF /* AppDelegate.swift in Sources */,
 				C8691C132AD3FFB100769DBF /* SceneDelegate.swift in Sources */,
 			);
@@ -297,14 +289,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C8691C162AD3FFB100769DBF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C8691C172AD3FFB100769DBF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C8691C1B2AD3FFB500769DBF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -442,7 +426,6 @@
 				INFOPLIST_FILE = ReceiptShoppingApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,7 +453,6 @@
 				INFOPLIST_FILE = ReceiptShoppingApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

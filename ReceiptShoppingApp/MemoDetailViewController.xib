@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MemoDetailViewController" customModule="ReceiptShoppingApp" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Ehk-Tb-qY1">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVP-UW-bav">
+                    <rect key="frame" x="20" y="69" width="77" height="30"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="キャンセル"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCR-Jm-29j">
+                    <rect key="frame" x="342" y="69" width="31" height="30"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="保存"/>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oSl-WO-Raf">
+                    <rect key="frame" x="20" y="119" width="353" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OdB-UJ-2lu">
+                    <rect key="frame" x="0.0" y="173" width="393" height="545"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvS-2y-CR3" customClass="TableFooterView" customModule="領収shoppingApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="726" width="393" height="92"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="92" id="IOq-Ju-q4G"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="NRz-KI-CvE"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="rVP-UW-bav" firstAttribute="top" secondItem="NRz-KI-CvE" secondAttribute="top" constant="10" id="0HL-Ar-0jc"/>
+                <constraint firstItem="oSl-WO-Raf" firstAttribute="leading" secondItem="NRz-KI-CvE" secondAttribute="leading" constant="20" id="Dww-rU-0wQ"/>
+                <constraint firstItem="oSl-WO-Raf" firstAttribute="top" secondItem="rVP-UW-bav" secondAttribute="bottom" constant="20" id="EE7-qf-yWS"/>
+                <constraint firstItem="zvS-2y-CR3" firstAttribute="leading" secondItem="NRz-KI-CvE" secondAttribute="leading" id="IgD-7w-2ns"/>
+                <constraint firstItem="zvS-2y-CR3" firstAttribute="trailing" secondItem="NRz-KI-CvE" secondAttribute="trailing" id="O4o-TA-lmL"/>
+                <constraint firstItem="rVP-UW-bav" firstAttribute="leading" secondItem="NRz-KI-CvE" secondAttribute="leading" constant="20" id="POt-uH-KNd"/>
+                <constraint firstItem="DCR-Jm-29j" firstAttribute="top" secondItem="NRz-KI-CvE" secondAttribute="top" constant="10" id="ccK-0q-LhP"/>
+                <constraint firstItem="OdB-UJ-2lu" firstAttribute="leading" secondItem="NRz-KI-CvE" secondAttribute="leading" id="liU-jc-6n5"/>
+                <constraint firstItem="zvS-2y-CR3" firstAttribute="top" secondItem="OdB-UJ-2lu" secondAttribute="bottom" constant="8" id="qff-Ha-xHM"/>
+                <constraint firstItem="NRz-KI-CvE" firstAttribute="trailing" secondItem="DCR-Jm-29j" secondAttribute="trailing" constant="20" id="sZF-UK-LhL"/>
+                <constraint firstItem="zvS-2y-CR3" firstAttribute="bottom" secondItem="NRz-KI-CvE" secondAttribute="bottom" id="sql-y0-ViD"/>
+                <constraint firstItem="OdB-UJ-2lu" firstAttribute="top" secondItem="oSl-WO-Raf" secondAttribute="bottom" constant="20" id="wFc-sF-Vvj"/>
+                <constraint firstItem="NRz-KI-CvE" firstAttribute="trailing" secondItem="oSl-WO-Raf" secondAttribute="trailing" constant="20" id="xgf-5c-Iw8"/>
+                <constraint firstItem="OdB-UJ-2lu" firstAttribute="trailing" secondItem="NRz-KI-CvE" secondAttribute="trailing" id="yzl-KE-4mE"/>
+            </constraints>
+            <point key="canvasLocation" x="34.782608695652179" y="19.565217391304348"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

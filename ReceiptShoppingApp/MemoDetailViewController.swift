@@ -22,7 +22,7 @@ class MemoDetailViewController: UIViewController {
 
     var array: [MemoDataModel] = []
     
-//    var record = MemoDataModel()
+    var record = MemoDataModel()
     
     var titleRecord = MemoTitleModel()
         
@@ -197,11 +197,20 @@ extension MemoDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func saveRecord(with: MemoTitleModel) {
         let realm = try! Realm()
         try! realm.write {
-            if let titleText = inputTitleTextField.text {
-                titleRecord.memoTitle = titleText
+            if let existingMemoTitle = realm.objects(MemoTitleModel.self).first(where: { $0.id == titleRecord.id}) {
+                // すでにデータがある場合の条件分岐
+                // 一度memoDataListを中身を削除
+                existingMemoTitle.memoDataList.removeAll()
+                // タイトルテキスト設定
+                existingMemoTitle.memoTitle = inputTitleTextField.text!
+                // memoDataList再設定
+                existingMemoTitle.memoDataList.append(objectsIn: array)
+            } else {
+                // データ新規作成
+                titleRecord.memoTitle = inputTitleTextField.text!
+                titleRecord.memoDataList.append(objectsIn: array)
+                realm.add(titleRecord)
             }
-            titleRecord.memoDataList.append(objectsIn: array)
-            realm.add(titleRecord)
         }
         dismiss(animated: true)
     }

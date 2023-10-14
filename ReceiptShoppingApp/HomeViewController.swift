@@ -82,6 +82,7 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let memoDetaileView = MemoDetailViewController()
+        memoDetaileView.presentationController?.delegate = self
         let memoData = memoDataList[indexPath.row]
         memoDetaileView.configure(memo: memoData)
         self.present(memoDetaileView, animated: true)

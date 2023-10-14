@@ -8,7 +8,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="ReceiptShoppingApp" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="ReceiptShoppingApp" customModuleProvider="target">
+            <connections>
+                <outlet property="addButton" destination="bAv-qq-cSI" id="uqe-aE-vcF"/>
+                <outlet property="tableView" destination="G5M-NQ-5bD" id="zzT-if-aOb"/>
+                <outlet property="view" destination="qNv-vS-hhl" id="oGG-MO-XsY"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="qNv-vS-hhl">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -29,6 +35,9 @@
                     <state key="normal" title="+">
                         <color key="titleColor" systemColor="systemBackgroundColor"/>
                     </state>
+                    <connections>
+                        <action selector="addButton:" destination="-1" eventType="touchUpInside" id="l9s-qK-Zfs"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="CMk-ct-BMT"/>

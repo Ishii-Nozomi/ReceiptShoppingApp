@@ -98,23 +98,8 @@ class MemoDetailViewController: UIViewController {
         // filter -> {}内の条件で絞る
         // forEach -> 配列の中身を全部ループさせる
         array.filter{ $0.isChecked }.forEach{ info in
-            let price = Double(info.price) ?? 0.0
-            let taxInPrice: Double
-                  switch info.tax {
-                  case .tax8:
-                    // 8%計算
-                      taxInPrice = price
-                    break
-                  case .tax10:
-                    // 10%計算
-                      taxInPrice = price
-                    break
-                  case .taxFree:
-                    // そのまま
-                      taxInPrice = price
-                    break
-                  }
-            total += Int(taxInPrice)
+            let price = Int(info.price) ?? 0
+            total += Int(price)
         }
         return total
     }

@@ -75,6 +75,7 @@ class MemoDetailViewController: UIViewController {
         let tapGR: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
                 tapGR.cancelsTouchesInView = false
                 self.view.addGestureRecognizer(tapGR)
+        footerView.totalTextLabel.text = String(totalPrice())
 
     }
     
@@ -102,11 +103,11 @@ class MemoDetailViewController: UIViewController {
                   switch info.tax {
                   case .tax8:
                     // 8%計算
-                      taxInPrice = price * 1.08
+                      taxInPrice = price
                     break
                   case .tax10:
                     // 10%計算
-                      taxInPrice = price * 1.1
+                      taxInPrice = price
                     break
                   case .taxFree:
                     // そのまま
@@ -189,8 +190,8 @@ extension MemoDetailViewController: UITableViewDataSource, UITableViewDelegate {
         let targetMemo = array[indexPath.row]
                 try! realm.write {
                     realm.delete(targetMemo)
+                    array.remove(at: indexPath.row)
                 }
-                array.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .automatic)
     }
     
@@ -241,8 +242,13 @@ extension MemoDetailViewController: TableViewCellDelegate {
     func checkBoxSelectedForCell(cell: TableViewCell) {
         let indexPath = memoTableView.indexPath(for: cell)
         memoTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath!)
-        let row = indexPath?.row
-        array[row!].isChecked = cell.checkButton.isChecked
+        if let row = indexPath?.row {
+            // 一時的なMemoDataModelを作成し、データを変更(直接編集するとクラッシュするため)
+            let tempMemoData = array[row].copyModel()
+            tempMemoData.isChecked = cell.checkButton.isChecked
+            // 一時的なデータでarrayを更新
+            array[row] = tempMemoData
+        }
         
         footerView.totalTextLabel.text = String(totalPrice())
     }
@@ -254,8 +260,22 @@ extension MemoDetailViewController: TableViewCellDelegate {
         memoTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath!)
         let row = indexPath?.row
         // arrayの該当番号のMemoDataModelにcell.memoTextの値とcell.priceTextの値を格納
-        array[row!].memo = cell.memoText.text!
-        array[row!].price = cell.priceText.text!
+        // 一時的なMemoDataModelを作成し、データを変更(直接編集するとクラッシュするため)
+        let tempMemoData = MemoDataModel()
+        tempMemoData.memo = cell.memoText.text!
+        tempMemoData.price = cell.priceText.text!
+        
+        // TODO: taxFreeの時はどうすれば良いでしょうか？ ロジックを考えてみましょう。
+                if cell.tax8Button.isSelected {
+                    tempMemoData.tax = .tax8
+                } else if cell.tax10Button.isSelected {
+                    tempMemoData.tax = .tax10
+                } else {
+                    tempMemoData.tax = .taxFree
+                }
+        
+        // 一時的なデータでarrayを更新
+        array[row!] = tempMemoData
     }
 }
 

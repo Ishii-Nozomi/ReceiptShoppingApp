@@ -9,9 +9,6 @@ import Foundation
 import RealmSwift
 
 class MemoDataModel: Object {
-    override static func primaryKey() -> String? {
-        return "id"
-    }
     
    @objc enum Tax: Int, RealmEnum {
         case tax8
@@ -19,10 +16,23 @@ class MemoDataModel: Object {
         case taxFree
     }
     
-    @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var memo: String = ""
     @objc dynamic var price: String = ""
     @objc dynamic var isChecked: Bool = false
     @objc dynamic var tax = Tax.taxFree
     let optionalEnumProperty = RealmProperty<Tax?>()
+    
+}
+
+// コピーするメソッドを追加
+extension MemoDataModel {
+    func copyModel() -> MemoDataModel {
+            let copiedModel = MemoDataModel()
+            copiedModel.memo = self.memo
+            copiedModel.price = self.price
+            copiedModel.isChecked = self.isChecked
+            copiedModel.tax = self.tax
+            copiedModel.optionalEnumProperty.value = self.optionalEnumProperty.value
+            return copiedModel
+        }
 }

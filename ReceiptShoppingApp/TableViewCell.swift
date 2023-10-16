@@ -39,6 +39,7 @@ class TableViewCell: UITableViewCell {
         memoText.delegate = self
         priceText.delegate = self
         checkButton.delegate = self
+        delegate?.textFieldShouldEndEditingInCell(cell: self)
        }
     
     
@@ -79,6 +80,8 @@ class TableViewCell: UITableViewCell {
         priceText.text = String(Int(taxInPrice))
         // MemoViewControllerに金額を再計算
         delegate?.didChengeTax()
+        delegate?.textFieldShouldEndEditingInCell(cell: self)
+        delegate?.checkBoxSelectedForCell(cell: self)
     }
     
     @IBAction func tax10Button(_ sender: Any) {
@@ -100,6 +103,8 @@ class TableViewCell: UITableViewCell {
         priceText.text = String(Int(taxInPrice))
         // MemoViewControllerに金額を再計算
         delegate?.didChengeTax()
+        delegate?.textFieldShouldEndEditingInCell(cell: self)
+        delegate?.checkBoxSelectedForCell(cell: self)
     }
     
     /// 税抜き金額を取得

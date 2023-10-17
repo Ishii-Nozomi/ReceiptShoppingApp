@@ -30,7 +30,6 @@ class TableViewCell: UITableViewCell {
     // チェックボックス
     @IBOutlet weak var checkButton: Checkbox!
     
-//    var array: [MemoDataModel] = []
     var delegate: TableViewCellDelegate?
     
     

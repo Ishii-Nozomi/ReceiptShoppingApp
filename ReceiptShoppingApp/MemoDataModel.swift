@@ -20,7 +20,6 @@ class MemoDataModel: Object {
     @objc dynamic var price: String = ""
     @objc dynamic var isChecked: Bool = false
     @objc dynamic var tax = Tax.taxFree
-    let optionalEnumProperty = RealmProperty<Tax?>()
     
 }
 
@@ -32,7 +31,6 @@ extension MemoDataModel {
             copiedModel.price = self.price
             copiedModel.isChecked = self.isChecked
             copiedModel.tax = self.tax
-            copiedModel.optionalEnumProperty.value = self.optionalEnumProperty.value
             return copiedModel
         }
 }

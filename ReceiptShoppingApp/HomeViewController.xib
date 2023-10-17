@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="ReceiptShoppingApp" customModuleProvider="target">
+            <connections>
+                <outlet property="addButton" destination="bAv-qq-cSI" id="uqe-aE-vcF"/>
+                <outlet property="tableView" destination="G5M-NQ-5bD" id="zzT-if-aOb"/>
+                <outlet property="view" destination="qNv-vS-hhl" id="oGG-MO-XsY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="qNv-vS-hhl">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="G5M-NQ-5bD">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAv-qq-cSI">
+                    <rect key="frame" x="323" y="748" width="50" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="EOP-mz-aIs"/>
+                        <constraint firstAttribute="height" constant="50" id="GIY-Pg-A7d"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="+">
+                        <color key="titleColor" systemColor="systemBackgroundColor"/>
+                    </state>
+                    <connections>
+                        <action selector="addButton:" destination="-1" eventType="touchUpInside" id="l9s-qK-Zfs"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="CMk-ct-BMT"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="G5M-NQ-5bD" firstAttribute="leading" secondItem="CMk-ct-BMT" secondAttribute="leading" id="EYe-2r-Srf"/>
+                <constraint firstItem="CMk-ct-BMT" firstAttribute="bottom" secondItem="bAv-qq-cSI" secondAttribute="bottom" constant="20" id="e1X-WR-4iD"/>
+                <constraint firstItem="G5M-NQ-5bD" firstAttribute="bottom" secondItem="CMk-ct-BMT" secondAttribute="bottom" id="ftR-YN-6oE"/>
+                <constraint firstItem="G5M-NQ-5bD" firstAttribute="trailing" secondItem="CMk-ct-BMT" secondAttribute="trailing" id="pf7-wx-aRl"/>
+                <constraint firstItem="G5M-NQ-5bD" firstAttribute="top" secondItem="qNv-vS-hhl" secondAttribute="top" id="vN7-Cx-h4w"/>
+                <constraint firstItem="CMk-ct-BMT" firstAttribute="trailing" secondItem="bAv-qq-cSI" secondAttribute="trailing" constant="20" id="vXv-ly-Jyq"/>
+            </constraints>
+            <point key="canvasLocation" x="136.23188405797103" y="19.565217391304348"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

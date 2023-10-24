@@ -172,12 +172,9 @@ extension MemoDetailViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if let existingMemoList = realm.objects(MemoTitleModel.self).first(where: { $0.id == titleRecord.id }) {
             array.remove(at: indexPath.row)
             footerView.totalTextLabel.text = String(totalPrice())
             tableView.reloadData()
-        }
-        
     }
     
     func saveRecord(with: MemoTitleModel) {
